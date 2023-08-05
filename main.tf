@@ -27,30 +27,20 @@ module "vnet" {
 
 }
 
-module "LB" {
+module "pip" {
     source = "./modules/LoadBalancer"
     resource-group-name = var.resource-group-name
     pip-name            = var.pip-name
     location            = var.location   
     pip-allocation_method   = var.pip-allocation_method
     LB-name               = var.LB-name
-    LB-FEIP-name                = var.LB-FEIP-name
+    FEIP-name          = var.FEIP-name
     BEPool-name            = var.BEPool-name
     LBProbe-name            = var.LBProbe-name
     LBprobe-port            = var.LBprobe-port
     LBRule-name             = var.LBRule-name
     LBRule-protocol              = var.LBRule-protocol
     LBRule-frontend-port                  = var.LBRule-frontend-port
-    LBRule-backend-port                 = var.LBRule-backend-port
-    LBRule-frontend_ip_configuration_name = var.LBRule-frontend_ip_configuration_name
+    LBRule-backend-port                 = var.LBRule-backend-port 
     NSG-name              = var.NSG-name
-    NSRule-name                      = var.NSRule-name
-    NSRule-priority                    = var.NSRule-priority
-    NSRule-direction                   = var.NSRule-direction
-    NSRule-access                      = var.NSRule-access
-    NSRule-protocol                    = var.NSRule-protocol
-    NSRule-source_port_range           = var.NSRule-source_port_range
-    NSRule-destination_port_range      = var.NSRule-destination_port_range
-    NSRule-source_address_prefix       = var.NSRule-source_address_prefix
-    NSRule-destination_address_prefix  = var.NSRule-destination_address_prefix
 }
