@@ -29,12 +29,12 @@ module "vnet" {
 
 module "pip" {
     source = "./modules/LoadBalancer"
-    resource-group-name = var.resource-group-name
+    resource-group-name = module.resource-group.resource-group-name
     pip-name            = var.pip-name
-    location            = var.location   
+    location            = var.location
     pip-allocation_method   = var.pip-allocation_method
     LB-name               = var.LB-name
-    FEIP-name          = var.FEIP-name
+    LB-FEIP-name          = var.LB-FEIP-name
     BEPool-name            = var.BEPool-name
     LBProbe-name            = var.LBProbe-name
     LBprobe-port            = var.LBprobe-port
