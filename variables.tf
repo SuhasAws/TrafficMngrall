@@ -91,3 +91,102 @@ variable "NSG-name" {
     type = string
     description = "Network Security Group Name"
 }
+
+variable "APGWSUBNT-name" {
+    type = string
+    description = "Name of Subnet"
+}
+
+variable "APGWSUBNT-address_prefixes" {
+    type = list(string)
+    description = "address prefix of subnet"
+}
+variable "pipAG-name" {
+    type = string
+    description = "Name of Public IP"
+}
+variable "pipAG-allocation_method" {
+    type = string
+    description = "Allocation method of public ip"
+}
+variable "pipAG-sku" {
+    type = string
+    description = "sku of public ip"
+}
+variable "APGW-name" {
+    type = string
+    description = "name of application gateway"
+}
+variable "APGW-sku-name" {
+    type = string
+    description = "sku name of application gateway"
+}
+
+variable "APGW-sku-tier" {
+    type = string
+    description = "tier of application gateway"
+}
+variable "APGW-sku-capacity" {
+    type = number
+    description = "capacity of sku"
+}
+variable "APGW-GIP-name" {
+    type = string
+    description = "name of gateway ip configuration"
+}
+variable "APGW-FEPORT-name" {
+    type = string
+    description = "name of frontendport"
+}
+variable "APGW-FEPORT-port" {
+    type = number
+    description = "port number of frontend port"
+}
+variable "APGW-FEIP-name" {
+    type = string
+    description = "name of frontend ip configuration"
+}
+variable "APGW-BEPOOL-name" {
+    type = string
+    description = "name of backend address pool"
+}
+variable "APGW-BPST-name" {
+    type = string
+    description = "name of backend http settings"
+}
+variable "APGW-BPST-cookie_based_affinity" {
+    type = string
+    description = "= cookie based affinity"
+}
+variable "APGW-BPST-port" {
+    type = number
+    description = "port number of backend http settings"
+}
+variable "APGW-BPST-protocol" {
+    type = string
+    description = "protocol of backend http settings"
+}
+variable "APGW-BPST-request_timeout" {
+    type = number
+    description = "request timeout number"
+}
+variable "APGW-BPLS-name" {
+    type = string
+    description = "name of backend http listener"
+}
+variable "APGW-BPLS-protocol" {
+    type = string
+    description = "protocol of backend http listener"
+}
+variable "APGW-BPRR-name" {
+    type = string
+    description = "name of backend request routing rule"
+}
+variable "APGW-BPRR-rule_type" {
+    type = string
+    description = "rule type of backend request routing rule"
+}
+variable "APGW-BPRR-priority" {
+    type = number
+    description = "priority of backend request routing rule"
+}
