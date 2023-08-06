@@ -1,7 +1,7 @@
 variable "pip-name" {}
 variable "pip-allocation_method" {}
 variable "LB-name" {}
-variable "FEIP-name" {}
+variable "LB-FEIP-name" {}
 variable "BEPool-name" {}
 variable "LBProbe-name" {}
 variable "LBprobe-port" {}
@@ -9,7 +9,6 @@ variable "LBRule-name" {}
 variable "LBRule-protocol" {}
 variable "LBRule-frontend-port" {}
 variable "LBRule-backend-port" {}
-variable "frontend_ip_configuration_name" {}
 variable "NSG-name" {}
 variable "resource-group-name" {}
 variable "location" {}
