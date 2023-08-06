@@ -31,7 +31,7 @@ module "pip" {
     source = "./modules/LoadBalancer"
     resource-group-name = module.resource-group.resource-group-name
     pip-name            = var.pip-name
-    location            = var.location
+    location            = module.resource-group.location
     pip-allocation_method   = var.pip-allocation_method
     LB-name               = var.LB-name
     LB-FEIP-name          = var.LB-FEIP-name
@@ -44,3 +44,45 @@ module "pip" {
     LBRule-backend-port                 = var.LBRule-backend-port 
     NSG-name              = var.NSG-name
 }
+
+module "APGWSUBNT" {
+    source = "./modules/ApplicationGateway"
+    resource-group-name = module.resource-group.resource-group-name
+    location = module.resource-group.location
+    vnet-name = module.vnet.vnet-name
+    APGWSUBNT-name = var.APGWSUBNT-name
+    APGWSUBNT-address_prefixes = var.APGWSUBNT-address_prefixes
+    pipAG-name = var.pipAG-name
+    pipAG-allocation_method = var.pipAG-allocation_method
+    pipAG-sku = var.pipAG-sku
+    APGW-name = var.APGW-name
+    APGW-sku-name = var.APGW-sku-name
+    APGW-sku-tier = var.APGW-sku-tier
+    APGW-sku-capacity = var.APGW-sku-capacity
+    APGW-GIP-name = var.APGW-GIP-name
+    APGW-FEPORT-name = var.APGW-FEPORT-name
+    APGW-FEPORT-port = var.APGW-FEPORT-port
+    APGW-FEIP-name = var.APGW-FEIP-name
+    APGW-BEPOOL-name = var.APGW-BEPOOL-name
+    APGW-BPST-name = var.APGW-BPST-name
+    APGW-BPST-cookie_based_affinity = var.APGW-BPST-cookie_based_affinity
+    APGW-BPST-port = var.APGW-BPST-port
+    APGW-BPST-protocol = var.APGW-BPST-protocol
+    APGW-BPST-request_timeout = var.APGW-BPST-request_timeout
+    APGW-BPLS-name = var.APGW-BPLS-name
+    APGW-BPLS-protocol = var.APGW-BPLS-protocol
+    APGW-BPRR-name = var.APGW-BPRR-name
+    APGW-BPRR-rule_type = var.APGW-BPRR-rule_type
+    APGW-BPRR-priority = var.APGW-BPRR-priority
+}
+
+
+
+
+
+
+
+
+
+
+
