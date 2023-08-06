@@ -9,11 +9,11 @@ resource "azurerm_lb" "LB" {
   name                = var.LB-name
   location            = var.location
   resource_group_name = var.resource-group-name
-}
 
- resource "frontend_ip_configuration" "FEIP" {
-    name                 = var.FEIP-name
+  frontend_ip_configuration {
+    name                 = var.LB-FEIP-name
     public_ip_address_id = azurerm_public_ip.pip.id
+  }
 }
 
 resource "azurerm_lb_backend_address_pool" "BEPool" {
@@ -33,7 +33,7 @@ resource "azurerm_lb_rule" "LBRule" {
   protocol                       = var.LBRule-protocol
   frontend_port                  = var.LBRule-frontend-port
   backend_port                   = var.LBRule-backend-port
-  frontend_ip_configuration_name = var.LBRule-frontend_ip_configuration_name
+  frontend_ip_configuration_name = var.LB-FEIP-name
 }
 
 resource "azurerm_network_security_group" "NSG" {
