@@ -75,3 +75,17 @@ module "APGWSUBNT" {
     APGW-BPRR-rule_type = var.APGW-BPRR-rule_type
     APGW-BPRR-priority = var.APGW-BPRR-priority
 }
+
+module "BSTN-SB1" {
+  source = "./modules/Bastion"
+    resource-group-name = module.resource-group.resource-group-name
+    location = module.resource-group.location
+    vnet-name = module.vnet.vnet-name
+    BSTN-SB1-name = var.BSTN-SB1-name
+    BSTN-SB1-address_prefixes = var.BSTN-SB1-address_prefixes
+    BSTN-pip-name = var.BSTN-pip-name
+    BSTN-pip-allocation_method = var.BSTN-pip-allocation_method
+    BSTN-pip-sku = var.BSTN-pip-sku
+    BHOST-name = var.BHOST-name
+    BHOST-ip-name = var.BHOST-ip-name
+}
