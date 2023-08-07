@@ -17,12 +17,12 @@ variable "vnet-address-space" {
     type = list(string)
     description = "Address space of virtual network"
 }
-variable "subnet-name" {
+variable "vnet-subnet-name" {
     type = string
     description = "Name of vnet subnet"
 }
 
-variable "subnet-address-prefix" {
+variable "vnet-subnet-address_prefixes" {
     type = list(string)
     description = "Address prefix of vnet subnet"
 }
