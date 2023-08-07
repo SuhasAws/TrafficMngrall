@@ -6,8 +6,8 @@ resource "azurerm_virtual_network" "vnet" {
 } 
 
 resource "azurerm_subnet" "vnet-subnet" {
-  name                 = var.subnet-name
+  name                 = var.vnet-subnet-name
   resource_group_name  = var.resource-group-name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = var.subnet-address-prefix
+  address_prefixes     = var.vnet-subnet-address_prefixes
 }
