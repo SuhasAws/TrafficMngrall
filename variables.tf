@@ -190,3 +190,32 @@ variable "APGW-BPRR-priority" {
     type = number
     description = "priority of backend request routing rule"
 }
+variable "BSTN-SB1-name" {
+    type = string
+    description = "Name of Bastion Subnet"
+}
+variable "BSTN-SB1-address_prefixes" {
+    type = list(string)
+    description = "Address prefix of bastion subnet"
+}
+variable "BSTN-pip-name" {
+    type = string
+    description = "Name of Bastion Public IP"
+}
+variable "BSTN-pip-allocation_method" {
+    type = string
+    description = "Allocation method of bastion public ip"
+}
+variable "BSTN-pip-sku" {
+    type = string
+    description = "sku of bastion public ip"
+}
+variable "BHOST-name" {
+    type = string
+    description = "Name of Bastion Host "
+}
+variable "BHOST-ip-name" {
+    type = string
+    description = "name of bastion host ip config"
+}
+
