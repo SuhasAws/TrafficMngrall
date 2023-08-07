@@ -22,8 +22,8 @@ module "vnet" {
     vnet-address-space = var.vnet-address-space
     resource-group-name = module.resource-group.resource-group-name
     location = module.resource-group.location
-    subnet-name = var.subnet-name
-    subnet-address-prefix = var.subnet-address-prefix
+    vnet-subnet-name = var.vnet-subnet-name
+    vnet-subnet-address_prefixes = var.vnet-subnet-address_prefixes
 
 }
 
@@ -75,14 +75,3 @@ module "APGWSUBNT" {
     APGW-BPRR-rule_type = var.APGW-BPRR-rule_type
     APGW-BPRR-priority = var.APGW-BPRR-priority
 }
-
-
-
-
-
-
-
-
-
-
-
