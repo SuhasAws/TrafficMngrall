@@ -27,7 +27,7 @@ resource "azurerm_application_gateway" "APGW" {
 
   gateway_ip_configuration {
     name      = var.APGW-GIP-name
-    subnet_id = azurerm_subnet.frontend.id
+    subnet_id = azurerm_subnet.APGWSUBNT.id
   } 
 
 
@@ -38,7 +38,7 @@ resource "azurerm_application_gateway" "APGW" {
 
   frontend_ip_configuration {
     name                 = var.APGW-FEIP-name
-    public_ip_address_id = azurerm_public_ip.pip.id
+    public_ip_address_id = azurerm_public_ip.pipAG.id
   }
 
   backend_address_pool {
