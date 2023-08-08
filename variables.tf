@@ -218,4 +218,32 @@ variable "BHOST-ip-name" {
     type = string
     description = "name of bastion host ip config"
 }
+variable "Nat-SB-name" {
+    type = string
+    description = "Name of Nat Subnet"
+}
+variable "Nat-SB-address_prefixes" {
+    type = list(string)
+    description = "Address prefix of nat subnet"
+}
+variable "NAT-pip-name" {
+    type = string
+    description = "Name of NAT Public IP"
+}
+variable "NAT-pip-allocation_method" {
+    type = string
+    description = "Allocation method of NAT Public IP"
+}
+variable "NAT-pip-sku" {
+    type = string
+    description = "SKU of Nat Public IP"
+}
+variable "NAT-GWY-name" {
+    type = string
+    description = "Name of NAT Gateway"
+}
+variable "NAT-GWY-sku_name" {
+    type = string
+    description = "Name of NAT Gateway SKU"
+}
 
