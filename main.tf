@@ -89,3 +89,17 @@ module "BSTN-SB1" {
     BHOST-name = var.BHOST-name
     BHOST-ip-name = var.BHOST-ip-name
 }
+
+module "Nat-SB" {
+  source = "./modules/NAT"
+    resource-group-name = module.resource-group.resource-group-name
+    location = module.resource-group.location
+    vnet-name = module.vnet.vnet-name
+    Nat-SB-name = var.Nat-SB-name
+    Nat-SB-address_prefixes = var.Nat-SB-address_prefixes
+    NAT-pip-name = var.NAT-pip-name
+    NAT-pip-allocation_method = var.NAT-pip-allocation_method
+    NAT-pip-sku = var.NAT-pip-sku
+    NAT-GWY-name = var.NAT-GWY-name
+    NAT-GWY-sku_name = var.NAT-GWY-sku_name
+}
