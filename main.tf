@@ -43,6 +43,15 @@ module "pip" {
     LBRule-frontend-port                  = var.LBRule-frontend-port
     LBRule-backend-port                 = var.LBRule-backend-port 
     NSG-name              = var.NSG-name
+    NSR-name = var.NSR-name
+    NSR-priority = var.NSR-priority
+    NSR-direction = var.NSR-direction
+    NSR-access = var.NSR-access
+    NSR-protocol = var.NSR-protocol
+    NSR-source_port_range = var.NSR-source_port_range
+    NSR-destination_port_range = var.NSR-destination_port_range
+    NSR-source_address_prefix = var.NSR-source_address_prefix
+    NSR-destination_address_prefix = var.NSR-destination_address_prefix
 }
 
 module "APGWSUBNT" {
