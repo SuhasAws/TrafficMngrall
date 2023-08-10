@@ -280,4 +280,63 @@ variable "NAT-GWY-sku_name" {
     type = string
     description = "Name of NAT Gateway SKU"
 }
+variable "TF-PIP-name" {
+    type = string
+    description = "name of traffic manager public ip"
+}
+variable "TF-PIP-allocation_method" {
+    type = string
+    description = "allocation method of traffic manager public ip"
+}
+variable "TF-PIP-domain_name_label" {
+    type = string
+    description = "domain label name of traffic manager public ip"
+}
+variable "TF-Profile-name" {
+    type = string
+    description = "name of traffic manager profile"
+}
+variable "TF-Profile-traffic_routing_method" {
+    type = string
+    description = "routing metho of traffic manager profile"
+}
+variable "TF-Profile-relative_name" {
+    type = string
+    description = "Traffic manager profile dns config relative name"
+}
+variable "TF-Profile-ttl" {
+    type = number
+    description = "Ttl of Traffic manager profile dns config "
+}
+variable "TF-Profile-protocol" {
+    type = string
+    description = "Traffic manager profile protocol"
+}
+variable "TF-Profile-port" {
+    type = number
+    description = "port number of traffic manager profile"
+}
+variable "TF-Profile-path" {
+    description = "Profile path of traffic manager"
+}
+variable "TF-Profile-interval_in_seconds" {
+    type = number
+    description = "Traffic manager profile interval in seconds"
+}
+variable "TF-Profile-timeout_in_seconds" {
+    type = number
+    description = "Traffic manager profile timeout in seconds"
+}
+variable "TF-Profile-tolerated_number_of_failures" {
+    type = number
+    description = "Traffic manager profile tolerated number of failures"
+}
+variable "TF-endpoint-name" {
+    type = string
+    description = "Traffic manager endpoint name"
+}
+variable "TF-endpoint-weight" {
+    type = number
+    description = "Traffic manager end point weight"
+}
 
