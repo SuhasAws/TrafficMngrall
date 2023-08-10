@@ -12,3 +12,12 @@ variable "LBRule-backend-port" {}
 variable "NSG-name" {}
 variable "resource-group-name" {}
 variable "location" {}
+variable "NSR-name" {}
+variable "NSR-priority" {}
+variable "NSR-direction" {}
+variable "NSR-access" {}
+variable "NSR-protocol" {}
+variable "NSR-source_port_range" {}
+variable "NSR-destination_port_range" {}
+variable "NSR-source_address_prefix" {}
+variable "NSR-destination_address_prefix" {}
