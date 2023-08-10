@@ -41,3 +41,17 @@ resource "azurerm_network_security_group" "NSG" {
   location            = var.location
   resource_group_name = var.resource-group-name
 }
+
+resource "azurerm_network_security_rule" "NSR" {
+  name                        = var.NSR-name
+  priority                    = var.NSR-priority
+  direction                   = var.NSR-direction
+  access                      = var.NSR-access
+  protocol                    = var.NSR-protocol
+  source_port_range           = var.NSR-source_port_range
+  destination_port_range      = var.NSR-destination_port_range
+  source_address_prefix       = var.NSR-source_address_prefix
+  destination_address_prefix  = var.NSR-destination_address_prefix
+  resource_group_name         = var.resource-group-name
+  network_security_group_name = azurerm_network_security_group.NSG.name
+}
