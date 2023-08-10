@@ -92,6 +92,40 @@ variable "NSG-name" {
     description = "Network Security Group Name"
 }
 
+variable "NSR-name" {
+    type = string
+    description = "Network Security rule name"
+}
+variable "NSR-priority" {
+    type = number
+    description = "Priority of network security rule"
+}
+variable "NSR-direction" {
+    type = string
+    description = "Direction of network security rule"
+}
+variable "NSR-access" {
+    type = string
+    description = "Access of Network security rules"
+}
+variable "NSR-protocol" {
+    type = string
+    description = "protocol of network security rules"
+}
+variable "NSR-source_port_range" {
+    description = "Range of ports to be used from source"
+}
+variable "NSR-destination_port_range" {
+    description = "Range of ports to be used from destination"
+    
+}
+variable "NSR-source_address_prefix" {
+    description = "NSR source address prefix"
+}
+variable "NSR-destination_address_prefix" {
+    description = "NSR destination address prefix"
+}
+
 variable "APGWSUBNT-name" {
     type = string
     description = "Name of Subnet"
