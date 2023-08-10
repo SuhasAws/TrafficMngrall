@@ -112,3 +112,24 @@ module "Nat-SB" {
     NAT-GWY-name = var.NAT-GWY-name
     NAT-GWY-sku_name = var.NAT-GWY-sku_name
 }
+
+module "TF-PIP" {
+  source = "./modules/TrafficManager"
+  resource-group-name = module.resource-group.resource-group-name
+  location = module.resource-group.location
+  TF-PIP-name = var.TF-PIP-name
+  TF-PIP-allocation_method = var.TF-PIP-allocation_method
+  TF-PIP-domain_name_label = var.TF-PIP-domain_name_label
+  TF-Profile-name = var.TF-Profile-name
+  TF-Profile-traffic_routing_method = var.TF-Profile-traffic_routing_method
+  TF-Profile-relative_name = var.TF-Profile-relative_name
+  TF-Profile-ttl = var.TF-Profile-ttl
+  TF-Profile-protocol = var.TF-Profile-protocol
+  TF-Profile-port = var.TF-Profile-port
+  TF-Profile-path = var.TF-Profile-path
+  TF-Profile-interval_in_seconds = var.TF-Profile-interval_in_seconds
+  TF-Profile-timeout_in_seconds = var.TF-Profile-timeout_in_seconds
+  TF-Profile-tolerated_number_of_failures = var.TF-Profile-tolerated_number_of_failures
+  TF-endpoint-name = var.TF-endpoint-name
+  TF-endpoint-weight = var.TF-endpoint-weight
+}
